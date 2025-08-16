@@ -12,13 +12,19 @@ export function Homepage({cambiarComponente}){
 
     return (
       <>
-
         <div className="grid justify-center">
           <div className="grid gap-2 justify-center">
             <div className="flex justify-center">
-              <img className=" w-1/3 mt-10  rounded-full" src={LogoGame} alt="Image" />
+              <img
+                className=" w-1/3 mt-10  rounded-full"
+                src={LogoGame}
+                alt="Image"
+              />
             </div>
-            <h1 style={{'color': deepblue, 'fontFamily': 'sansSerif'}} className="text-center text-3xl mt-10 text-purple-700">
+            <h1
+              style={{ color: deepblue, fontFamily: "sansSerif" }}
+              className="text-center text-3xl mt-10 text-purple-700"
+            >
               Bienvenido a "Ruta Decisiva"
             </h1>
             <h3>
@@ -26,26 +32,30 @@ export function Homepage({cambiarComponente}){
             </h3>
           </div>
 
-          <div className="grid justify-center items-center content-center gap-5">
-            <label htmlFor="character-name" className="text-xl">
-              Escribe el nombre de tu personaje
-            </label>
+          <div className="grid justify-center items-center  gap-2">
+            <div className="flex justify-center">
+              <label
+                htmlFor="character-name flex justify-center "
+                className="text-xl"
+              >
+                Escribe el nombre de tu personaje
+              </label>
+            </div>
             <input
-              className="character-name text-center border-1 border-blue-600 rounded-lg bg-blue-300"
+              className="character-name text-2xl h-10 w-100 text-center border-1 border-blue-600 rounded-lg bg-blue-300"
               type="text"
+              style={{ backgroundColor: "#7DAEDC" }}
             />
           </div>
           <div className="flex justify-center mt-10">
             <button
-              className=" bg-yellow-200 mb-10 p-3 rounded-lg"
+              className="hover:scale-130 bg-yellow-200 mb-10 p-3 rounded-lg"
               onClick={cambiarComponente}
             >
               Iniciar
             </button>
           </div>
         </div>
-
-       
       </>
     );
 }

@@ -8,11 +8,11 @@ export function Navbar(){
 
     return (
       <>
-        <div className="header h-15 p-2 justify" style={{ backgroundColor: yellow }}>
-          <nav className="flex justify-between items-center">
-            <ul className="w-30% ml-10 flex items-center gap-4">
-              <img className="w-10  " src={LogoGameT} alt="" />
-              <div>Ruta decisiva</div>
+        <div className="header h-15 flex p-10 justify-center" style={{ backgroundColor: yellow }}>
+          <nav className="flex justify-start items-center">
+            <ul className="w-300  flex items-center gap-4">
+              <img className="w-15 rounded-lg " src={LogoGameT} alt="" />
+              <div className="font-semibold">Ruta decisiva</div>
             </ul>
 
             <ul className="grid justify-center items-center content-center">
