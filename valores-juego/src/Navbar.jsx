@@ -7,22 +7,16 @@ export function Navbar(){
 
 
     return (
-      <>
-        <div className="header h-15 flex p-10 justify-center" style={{ backgroundColor: yellow }}>
-          <nav className="flex justify-start items-center">
-            <ul className="w-300  flex items-center gap-4">
-              <img className="w-15 rounded-lg " src={LogoGameT} alt="" />
-              <div className="font-semibold">Ruta decisiva</div>
-            </ul>
-
-            <ul className="grid justify-center items-center content-center">
-              <div className="flex justify-center"> 
-                <img className="w-8 flex justify-center" src={Home} alt="" />
-              </div>
-              <div className="flex justify-center"><strong>Home</strong></div>
-            </ul>
-            <ul></ul>
-          </nav>
+      <div className="header h-15 px-4 py-2 flex items-center justify-between w-full" style={{ backgroundColor: yellow }}>
+        {/* Logo a la izquierda */}
+        <div className="flex items-center gap-2">
+          <img className="w-12 h-12 rounded-lg object-contain" src={LogoGameT} alt="Logo Ruta decisiva" />
+          <span className="font-semibold text-lg hidden sm:block">Ruta decisiva</span>
         </div>
-      </>
-    );};
+        {/* Botón Home a la derecha */}
+        <button className="flex items-center gap-2 px-4 py-2 bg-blue-500 text-white rounded-full shadow hover:bg-blue-700 transition-colors">
+          <img className="w-6 h-6" src={Home} alt="Home" />
+          <span className="font-bold">Home</span>
+        </button>
+      </div>
+    )};

@@ -41,13 +41,14 @@ function App() {
     {
       imagen: universidadImg,
       titulo: "Universidad",
-      descripcion: "Descubre nuevos retos ",
+      descripcion:
+        "Descubre nuevos retos y tareas grandes que tendrán peso en tu futuro ",
       preguntas: preguntasPorFase[2],
     },
     {
       imagen: trabajoImg,
       titulo: "El trabajo",
-      descripcion: "Asume responsabilidades grandes que tendrán peso en tu futuro",
+      descripcion: "Asume responsabilidades mas importantes que serán importantes para tu vida ",
       preguntas: preguntasPorFase[3],
     },
     {
