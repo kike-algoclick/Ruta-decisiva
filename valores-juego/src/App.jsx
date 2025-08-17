@@ -5,6 +5,7 @@ import { Homepage } from "./HomePage";
 import { Navbar } from "./Navbar";
 import { Preguntas } from "./preguntas";
 
+
 import infanciaImg from './assets/pequeñoImg.jpg';
 import escuelaImg from './assets/school.jpg';
 import universidadImg from './assets/universidad.jpg';

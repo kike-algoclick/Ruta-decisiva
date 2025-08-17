@@ -11,7 +11,7 @@ export function Homepage({cambiarComponente}){
 
     return (
       <>
-        <div className="grid justify-center gap-2">
+        <div className="grid z-50 justify-center gap-2 overflow-y auto pt-20">
           <div className="grid gap-2 justify-center">
             <div className="flex justify-center">
               <img
@@ -30,7 +30,11 @@ export function Homepage({cambiarComponente}){
               Un juego en el que cada decisión es importante para tu personaje
             </h3>
           </div>
-          <div><h2 className="flex justify-center text-2xl">Iniciemos la Aventura</h2></div>
+          <div>
+            <h2 className="flex justify-center text-2xl">
+              Iniciemos la Aventura
+            </h2>
+          </div>
           <div className="flex justify-center mt-10">
             <button
               className="hover:scale-130 bg-yellow-200 mb-10 p-3 rounded-lg"
