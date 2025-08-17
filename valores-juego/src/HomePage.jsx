@@ -1,6 +1,5 @@
 import React from 'react'
 import {useState} from 'react'
-import {Question} from './preguntas'
 import LogoGame from './assets/ruta_decisiva.jpg'
 import LogoGameT from './assets/logo_y_texto.jpg'
 import {yellow, lightblue, beige, deepblue} from './colores'
@@ -12,7 +11,7 @@ export function Homepage({cambiarComponente}){
 
     return (
       <>
-        <div className="grid justify-center">
+        <div className="grid justify-center gap-2">
           <div className="grid gap-2 justify-center">
             <div className="flex justify-center">
               <img
@@ -28,25 +27,10 @@ export function Homepage({cambiarComponente}){
               Bienvenido a "Ruta Decisiva"
             </h1>
             <h3>
-              Un juego en el que cada decision es importante para tu personaje
+              Un juego en el que cada decisión es importante para tu personaje
             </h3>
           </div>
-
-          <div className="grid justify-center items-center  gap-2">
-            <div className="flex justify-center">
-              <label
-                htmlFor="character-name flex justify-center "
-                className="text-xl"
-              >
-                Escribe el nombre de tu personaje
-              </label>
-            </div>
-            <input
-              className="character-name text-2xl h-10 w-100 text-center border-1 border-blue-600 rounded-lg bg-blue-300"
-              type="text"
-              style={{ backgroundColor: "#7DAEDC" }}
-            />
-          </div>
+          <div><h2 className="flex justify-center text-2xl">Iniciemos la Aventura</h2></div>
           <div className="flex justify-center mt-10">
             <button
               className="hover:scale-130 bg-yellow-200 mb-10 p-3 rounded-lg"
