@@ -133,7 +133,7 @@ const preguntasPorFaseRelacionadas = [
             " Tu pareja entendió tu opinión y tus metas. La relación se vuelve tensa pero madura.",
         },
         {
-          opcion2: "La pospones para enfocarte en tu emprendimiento",
+          opcion2: "decides terminar la relación para enfocarte en tu futuro",
           puntaje: -10,
           mensaje:
             "Ganas independencia emocional, pero sufres un bajón temporal. Esto te afecta un poco en tu universidad pero lo superas",
@@ -148,20 +148,21 @@ const preguntasPorFaseRelacionadas = [
         {
           opcion1:
             "Buscas rápido un trabajo de medio tiempo para cubrir tus estudios",
+          puntaje: 25,
+          mensaje:
+            "consigues trabajo y logras mantener tus estudios. Tomaste una decisión en una situación crítica. ¡Excelente trabajo!",
+        },
+        {
+          opcion2: "Pausas la universidad para trabajar tiempo completo",
           puntaje: 10,
-          mensaje: "",
+          mensaje:
+            "Consigues estabilidad financiera, pero te alejas temporalmente de tus metas profesionales.",
         },
         {
-          opcion2: "La pospones para enfocarte en tu emprendimiento",
-          puntaje: -10,
+          opcion3: "Solicitas becas y ayudas para continuar",
+          puntaje: 20,
           mensaje:
-            "Al no aceptarla perdiste la oportunidad. Más adelante tratas de conseguirla otra vez pero, ya no está disponible",
-        },
-        {
-          opcion3: "La pospones para enfocarte en tu emprendimiento",
-          puntaje: -10,
-          mensaje:
-            "Al no aceptarla perdiste la oportunidad. Más adelante tratas de conseguirla otra vez pero, ya no está disponible",
+            "¡Felicidades!, obtuviste apoyo institucional, aunque el proceso es largo y agotador sales adelante y cumples tus metas profesionales",
         },
       ],
     },
@@ -171,12 +172,23 @@ const preguntasPorFaseRelacionadas = [
 
   [
     {
-      texto: "¿Qué valor es clave en el trabajo?",
-      opciones: ["Responsabilidad", "Honestidad", "Colaboración"],
-    },
-    {
-      texto: "¿Cómo tomas decisiones laborales?",
-      opciones: ["Consultando", "Analizando", "Siguiendo valores"],
+      texto:
+        "Te ofrecen una beca para estudiar en otro país, pero tienes miedo, ¿qué harás?",
+
+      opciones: [
+        {
+          opcion1: "Tomas valentia y aceptas la beca a pesar de el miedo",
+          puntaje: 20,
+          mensaje:
+            "Conviertes tu vida en una aventura académica. Tu vida cambió pero te acostrumbras",
+        },
+        {
+          opcion2: "La pospones para enfocarte en tu emprendimiento",
+          puntaje: -10,
+          mensaje:
+            "Al no aceptarla perdiste la oportunidad. Más adelante tratas de conseguirla otra vez pero, ya no está disponible",
+        },
+      ],
     },
   ],
 
@@ -184,12 +196,43 @@ const preguntasPorFaseRelacionadas = [
 
   [
     {
-      texto: "¿Qué valor te ha guiado en la vejez?",
-      opciones: ["Sabiduría", "Paciencia", "Generosidad"],
+      texto:
+        "Te ofrecen una beca para estudiar en otro país, pero tienes miedo, ¿qué harás?",
+
+      opciones: [
+        {
+          opcion1: "Tomas valentia y aceptas la beca a pesar de el miedo",
+          puntaje: 20,
+          mensaje:
+            "Conviertes tu vida en una aventura académica. Tu vida cambió pero te acostrumbras",
+        },
+        {
+          opcion2: "La pospones para enfocarte en tu emprendimiento",
+          puntaje: -10,
+          mensaje:
+            "Al no aceptarla perdiste la oportunidad. Más adelante tratas de conseguirla otra vez pero, ya no está disponible",
+        },
+      ],
     },
+	
     {
-      texto: "¿Qué consejo darías a los jóvenes?",
-      opciones: ["Ser honestos", "Ser perseverantes", "Ser empáticos"],
+      texto:
+        "Te ofrecen una beca para estudiar en otro país, pero tienes miedo, ¿qué harás?",
+
+      opciones: [
+        {
+          opcion1: "Tomas valentia y aceptas la beca a pesar de el miedo",
+          puntaje: 20,
+          mensaje:
+            "Conviertes tu vida en una aventura académica. Tu vida cambió pero te acostrumbras",
+        },
+        {
+          opcion2: "La pospones para enfocarte en tu emprendimiento",
+          puntaje: -10,
+          mensaje:
+            "Al no aceptarla perdiste la oportunidad. Más adelante tratas de conseguirla otra vez pero, ya no está disponible",
+        },
+      ],
     },
   ],
 ];

@@ -32,7 +32,7 @@ export function Homepage({cambiarComponente}){
           </div>
           <div>
             <h2 className="flex justify-center text-2xl">
-              Iniciemos la Aventura
+              Iniciemos la aventura
             </h2>
           </div>
           <div className="flex justify-center mt-10">
