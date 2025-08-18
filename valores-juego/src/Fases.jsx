@@ -5,7 +5,7 @@ import universidadImg from './assets/universidad.jpg';
 import trabajoImg from './assets/trabajo.jpg';
 import vejezImg from './assets/vejez.jpg';
 
-export function Fases({ imagen, titulo, descripcion, onClick }) {
+export function Fases({ imagen, titulo, descripcion, onClick, completada }) {
   return (
     <div className="overflow-y auto pt-20">
       <div className="flex flex-col items-center py-10 px-6 bg-white bg-opacity-80 rounded-xl shadow-lg m-6 w-80 max-w-xs">
@@ -17,10 +17,11 @@ export function Fases({ imagen, titulo, descripcion, onClick }) {
           <img src={imagen} alt={titulo} className="w-20 h-20 object-contain" />
         </div>
         <button
-          className="mt-4 px-6 py-2 bg-blue-500 text-white rounded-full shadow hover:bg-blue-700 transition-colors"
-          onClick={onClick}
+          className={`mt-4 px-6 py-2 rounded-full shadow transition-colors ${completada ? 'bg-gray-400 text-gray-700 cursor-not-allowed' : 'bg-blue-500 text-white hover:bg-blue-700'}`}
+          onClick={completada ? undefined : onClick}
+          disabled={completada}
         >
-          Ir a preguntas
+          {completada ? 'Fase completada' : 'Ir a preguntas'}
         </button>
       </div>
     </div>

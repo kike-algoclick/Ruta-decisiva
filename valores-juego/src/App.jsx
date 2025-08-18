@@ -17,6 +17,8 @@ function App() {
   const [componenteActual, setComponenteActual] = useState("inicio");
   const [faseSeleccionada, setFaseSeleccionada] = useState(null);
   const [preguntasActuales, setPreguntasActuales] = useState([]);
+  const [puntaje, setPuntaje] = useState(0);
+  const [fasesCompletadas, setFasesCompletadas] = useState([]);
 
   const preguntasPorFase = [
     ["¿Cuál es tu recuerdo favorito de la infancia?", "¿Qué aprendiste jugando?"],
@@ -69,9 +71,21 @@ function App() {
   };
 
   const handleFaseClick = (fase) => {
+    // Si la fase ya está completada, no hacer nada
+    if (fasesCompletadas.includes(fase.titulo)) return;
     setFaseSeleccionada(fase);
     setPreguntasActuales(fase.preguntas);
     setComponenteActual("preguntas");
+  };
+
+  const volverAFases = () => {
+    // Marcar la fase como completada si no está
+    if (faseSeleccionada && !fasesCompletadas.includes(faseSeleccionada.titulo)) {
+      setFasesCompletadas([...fasesCompletadas, faseSeleccionada.titulo]);
+    }
+    setFaseSeleccionada(null);
+    setPreguntasActuales([]);
+    setComponenteActual("fases");
   };
 
   return (
@@ -104,13 +118,20 @@ function App() {
                 titulo={fase.titulo}
                 descripcion={fase.descripcion}
                 onClick={() => handleFaseClick(fase)}
+                completada={fasesCompletadas.includes(fase.titulo)}
               />
             ))}
           </div>
         </div>
       }
       {componenteActual === "preguntas" && (
-        <Preguntas preguntas={preguntasActuales} fase={faseSeleccionada} />
+        <Preguntas
+          preguntas={preguntasActuales}
+          fase={faseSeleccionada}
+          puntaje={puntaje}
+          setPuntaje={setPuntaje}
+          volverAFases={volverAFases}
+        />
       )}
     </div>
   );
