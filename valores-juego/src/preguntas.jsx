@@ -1,4 +1,9 @@
 import React, { useState } from "react";
+import adultezImg from './assets/adultez.jpg';
+import livingRoomImg from './assets/LivingRoom.jpg';
+import schoolImg from './assets/schoolimg.jpg';
+import universidadImg from './assets/universidadimg.jpg';
+import workImg from './assets/work.jpg';
 
 // Ejemplo de preguntas relacionadas por fase
 const preguntasPorFaseRelacionadas = [
@@ -133,7 +138,7 @@ const preguntasPorFaseRelacionadas = [
             " Tu pareja entendió tu opinión y tus metas. La relación se vuelve tensa pero madura.",
         },
         {
-          opcion2: "decides terminar la relación para enfocarte en tu futuro",
+          opcion2: "Decides terminar la relación para enfocarte en tu futuro",
           puntaje: -10,
           mensaje:
             "Ganas independencia emocional, pero sufres un bajón temporal. Esto te afecta un poco en tu universidad pero lo superas",
@@ -169,24 +174,73 @@ const preguntasPorFaseRelacionadas = [
   ],
 
   //Fase 4
-
+  //terminar fase 4 preguntas
   [
     {
       texto:
-        "Te ofrecen una beca para estudiar en otro país, pero tienes miedo, ¿qué harás?",
+        "Consigues un empleo, pero un compañero te propone iniciar un negocio propio mientras sigues trabajando",
 
       opciones: [
         {
-          opcion1: "Tomas valentia y aceptas la beca a pesar de el miedo",
-          puntaje: 20,
+          opcion1:
+            "Aceptas y arriesgas tu estabilidad, pero podrías construir algo propio.",
+          puntaje: 15,
           mensaje:
-            "Conviertes tu vida en una aventura académica. Tu vida cambió pero te acostrumbras",
+            "El negocio tuvo éxito sin embargo esto pudo haber sido diferente.?¡Ten más cuidado con tus decisiones!",
         },
         {
-          opcion2: "La pospones para enfocarte en tu emprendimiento",
+          opcion2:
+            "Decides rechazar la oferta y mantener ingresos seguros y un trabajo estable",
+          puntaje: 20,
+          mensaje:
+            "A pesar que perdiste la oportunidad de emprender, al quedarte en tu trabajo recibes una oferta muy importante...",
+        },
+      ],
+    },
+
+    {
+      texto:
+        "Ya que te quedaste, tu jefe te ofrece un ascenso con más responsabilidades y mejor paga, pero más con más estrés y menos tiempo libre. ",
+
+      opciones: [
+        {
+          opcion1: "Aceptas el ascenso que tu jefe te propuso.",
+          puntaje: 15,
+          mensaje:
+            "Mejoras tu carrera y tu salario, pero sacrificas tu vida personal.",
+        },
+        {
+          opcion2: "Rechazas el ascenso que te ofreció tu jefe. ",
+          puntaje: 15,
+          mensaje:
+            "Mantienes tu equilibrio personal, pero podrías perder oportunidades de crecimiento.",
+        },
+        {
+          opcion3:
+            "Aprendes estrategias para equilibrar tu vida personal y trabajo.",
+          puntaje: 20,
+          mensaje:
+            "Reconociste que todo es importante y buscaste la forma de aprovechar todo. Muy bien decidido.",
+        },
+      ],
+    },
+
+    {
+      texto:
+        "Tu empresa te ofrece trasladarte a otro país con un mejor salario, pero lejos de tu familia y amigos. ¿Qué decides hacer?",
+
+      opciones: [
+        {
+          opcion1: "Aceptas esa oportunidad de trabajar en otro país.",
+          puntaje: 20,
+          mensaje:
+            "aprovechaste la oportunidad y ganas experiencia internacional y mejoras tu futuro económico.",
+        },
+        {
+          opcion2: "Decides rechazar la oportunidad de trabajar en otro país.",
           puntaje: -10,
           mensaje:
-            "Al no aceptarla perdiste la oportunidad. Más adelante tratas de conseguirla otra vez pero, ya no está disponible",
+            "Decides conservar tus vínculos cercanos y permanecer en tu zona segura, pero tu crecimiento laboral se ralentiza.",
         },
       ],
     },
@@ -197,47 +251,57 @@ const preguntasPorFaseRelacionadas = [
   [
     {
       texto:
-        "Te ofrecen una beca para estudiar en otro país, pero tienes miedo, ¿qué harás?",
+        "Luego de muchos años de experiencia y vivencias, un joven pide tus consejos para seguir tu camino, tu decides:",
 
       opciones: [
         {
-          opcion1: "Tomas valentia y aceptas la beca a pesar de el miedo",
-          puntaje: 20,
+          opcion1: "Compartes tu experiencia y conocimientos",
+          puntaje: 30,
           mensaje:
-            "Conviertes tu vida en una aventura académica. Tu vida cambió pero te acostrumbras",
+            "Luego de hablar con el joven, dejas huella en alguien que continuará tu legado.",
         },
         {
-          opcion2: "La pospones para enfocarte en tu emprendimiento",
-          puntaje: -10,
+          opcion2: "Le aconsejas que busque su propio camino",
+          puntaje: -15,
           mensaje:
-            "Al no aceptarla perdiste la oportunidad. Más adelante tratas de conseguirla otra vez pero, ya no está disponible",
+            "El joven con un poco de problemas encuentra su destino, y te sientes un poco mal por no haberlo orientado tanto.",
         },
-      ],
-    },
-	
-    {
-      texto:
-        "Te ofrecen una beca para estudiar en otro país, pero tienes miedo, ¿qué harás?",
 
-      opciones: [
         {
-          opcion1: "Tomas valentia y aceptas la beca a pesar de el miedo",
-          puntaje: 20,
+          opcion3: "No te interesas en él y decides no involucrarte",
+          puntaje: -30,
           mensaje:
-            "Conviertes tu vida en una aventura académica. Tu vida cambió pero te acostrumbras",
-        },
-        {
-          opcion2: "La pospones para enfocarte en tu emprendimiento",
-          puntaje: -10,
-          mensaje:
-            "Al no aceptarla perdiste la oportunidad. Más adelante tratas de conseguirla otra vez pero, ya no está disponible",
+            "El joven se las arregla solo, pero tardo bastante tiempo. Te quedas triste por que sabes que pudiste haber ayudado.",
         },
       ],
     },
   ],
 ];
 
-export function Preguntas({ fase, preguntas, puntaje, setPuntaje, volverAFases }) {
+export function Preguntas({ fase, preguntas, puntaje, setPuntaje, volverAFases, irAFinal }) {
+  // Determinar el fondo según la fase
+  let fondoImg = '';
+  if (fase && fase.titulo) {
+    switch (fase.titulo) {
+      case 'Infancia':
+        fondoImg = livingRoomImg;
+        break;
+      case 'En la escuela':
+        fondoImg = schoolImg;
+        break;
+      case 'Universidad':
+        fondoImg = universidadImg;
+        break;
+      case 'El trabajo':
+        fondoImg = workImg;
+        break;
+      case 'Vejez':
+        fondoImg = adultezImg;
+        break;
+      default:
+        fondoImg = '';
+    }
+  }
   const [preguntaActual, setPreguntaActual] = useState(0);
   const [seleccion, setSeleccion] = useState(null);
 
@@ -273,7 +337,12 @@ export function Preguntas({ fase, preguntas, puntaje, setPuntaje, volverAFases }
 
 	return (
     
-      <div className="min-h-screen flex flex-col items-center justify-center">
+      <>
+        {/* Fondo dinámico según la fase */}
+        {fondoImg && (
+          <div style={{position: 'fixed', left: 0, top: 0, width: '100vw', height: '100vh', backgroundImage: `url(${fondoImg})`, backgroundSize: 'cover', backgroundPosition: 'center', zIndex: -1}} />
+        )}
+        <div className="min-h-screen flex flex-col items-center justify-center relative">
         {/* Botón de volver y puntaje arriba a la derecha */}
         <div className=" mt-15 absolute top-6 right-8 z-10 flex gap-4">
           <div className="bg-blue-600 text-white rounded-lg shadow-lg px-6 py-3 text-lg font-bold">
@@ -333,14 +402,14 @@ export function Preguntas({ fase, preguntas, puntaje, setPuntaje, volverAFases }
                     <div className="text-xl font-bold text-green-700">Fase completada</div>
                     <button
                       className="px-6 py-2 bg-purple-600 text-white rounded-full shadow hover:bg-purple-800 transition-colors"
-                      onClick={volverAFases}
+                      onClick={fase && fase.titulo === 'Vejez' ? irAFinal : volverAFases}
                     >
-                      Siguiente fase
+                      {fase && fase.titulo === 'Vejez' ? 'Ver resultados' : 'Siguiente fase'}
                     </button>
                   </div>
                 )}
         </div>
-      </div>
-    
+        </div>
+      </>
   );
 }

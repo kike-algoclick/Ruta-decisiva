@@ -4,6 +4,7 @@ import { useState } from "react";
 import { Homepage } from "./HomePage";
 import { Navbar } from "./Navbar";
 import { Preguntas } from "./preguntas";
+import { PantallaFinal } from "./PantallaFinal";
 
 
 import infanciaImg from './assets/pequeñoImg.jpg';
@@ -88,13 +89,27 @@ function App() {
     setComponenteActual("fases");
   };
 
+  const todasCompletadas = fasesCompletadas.length === fasesData.length;
+
+  const finalizarJuego = () => {
+    setComponenteActual("final");
+  };
+
+  const volverAJugar = () => {
+    setComponenteActual("inicio");
+    setFasesCompletadas([]);
+    setFaseSeleccionada(null);
+    setPreguntasActuales([]);
+    setPuntaje(0);
+  };
+
   return (
     <div>
       <Navbar onHomeClick={irAHome} />
       {componenteActual === "inicio" && (
         <Homepage cambiarComponente={cambiarComponente} />
       )}
-      {componenteActual === "fases" &&
+      {componenteActual === "fases" && !todasCompletadas && (
         <div style={{ position: 'relative', minHeight: '100vh', width: '100%' }}>
           <div
             style={{
@@ -122,8 +137,19 @@ function App() {
               />
             ))}
           </div>
+          {/* Botón para finalizar solo cuando todas las fases estén completadas */}
+          {fasesCompletadas.length === fasesData.length && (
+            <div className="flex justify-center mt-8">
+              <button
+                className="px-6 py-2 bg-green-600 text-white rounded-full shadow hover:bg-green-800 transition-colors"
+                onClick={finalizarJuego}
+              >
+                Finalizar
+              </button>
+            </div>
+          )}
         </div>
-      }
+      )}
       {componenteActual === "preguntas" && (
         <Preguntas
           preguntas={preguntasActuales}
@@ -131,7 +157,11 @@ function App() {
           puntaje={puntaje}
           setPuntaje={setPuntaje}
           volverAFases={volverAFases}
+          irAFinal={() => setComponenteActual("final")}
         />
+      )}
+      {componenteActual === "final" && (
+        <PantallaFinal puntaje={puntaje} onVolverAJugar={volverAJugar} />
       )}
     </div>
   );
