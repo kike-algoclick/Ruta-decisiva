@@ -138,30 +138,30 @@ const preguntasPorFaseRelacionadas = [
           mensaje:
             "Ganas independencia emocional, pero sufres un bajón temporal. Esto te afecta un poco en tu universidad pero lo superas",
         },
-        {
-          texto:
-            "Vas bien en tus estudios pero tu familia ya no puede apoyarte económicamente. Tu decides:",
+      ],
+    },
+    {
+      texto:
+        "Vas bien en tus estudios pero tu familia ya no puede apoyarte económicamente. Tu decides:",
 
-          opciones: [
-            {
-              opcion1: "Buscas rápido un trabajo de medio tiempo para cubrir tus estudios",
-              puntaje: 10,
-              mensaje:
-                "",
-            },
-            {
-              opcion2: "La pospones para enfocarte en tu emprendimiento",
-              puntaje: -10,
-              mensaje:
-                "Al no aceptarla perdiste la oportunidad. Más adelante tratas de conseguirla otra vez pero, ya no está disponible",
-            },
-            {
-              opcion3: "La pospones para enfocarte en tu emprendimiento",
-              puntaje: -10,
-              mensaje:
-                "Al no aceptarla perdiste la oportunidad. Más adelante tratas de conseguirla otra vez pero, ya no está disponible",
-            },
-          ],
+      opciones: [
+        {
+          opcion1:
+            "Buscas rápido un trabajo de medio tiempo para cubrir tus estudios",
+          puntaje: 10,
+          mensaje: "",
+        },
+        {
+          opcion2: "La pospones para enfocarte en tu emprendimiento",
+          puntaje: -10,
+          mensaje:
+            "Al no aceptarla perdiste la oportunidad. Más adelante tratas de conseguirla otra vez pero, ya no está disponible",
+        },
+        {
+          opcion3: "La pospones para enfocarte en tu emprendimiento",
+          puntaje: -10,
+          mensaje:
+            "Al no aceptarla perdiste la oportunidad. Más adelante tratas de conseguirla otra vez pero, ya no está disponible",
         },
       ],
     },
